@@ -40,6 +40,7 @@
     "redux-combine-actions": "^0.1.2",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.1.0",
+    "webpack-hot-middleware": "^2.13.2",
     "youtube-api-search": "0.0.5"
   }
 }
