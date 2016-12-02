@@ -1,0 +1,175 @@
+@import './materialize.css';
+
+body {
+  font-family: 'Asap'
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oxygen'
+}
+
+#logo{
+  width:100%;
+  margin-top: 20px;
+}
+.hidden {
+  display : hidden
+}
+
+.range-field{
+  left: -10
+}
+
+.avatar-sizing{
+  width: 56px;
+  height: 56px
+}
+
+.list-inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+}
+.list-inline > li {
+  vertical-align:top;
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+span.value{
+   visibility: hidden
+ }
+span.thumb.active{
+   visibility: hidden
+ }
+
+ .btn-floating i{
+   color: #2F9EE2;
+   -o-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+ }
+ .btn-floating{
+   background: none;
+   border: 1px solid #2F9EE2;
+ }
+ .btn-floating:hover{
+   background-color: #2F9EE2;
+   color: white
+ }
+ .btn-floating:hover i{
+   color: white
+ }
+
+ nav{
+   background-color: rgb(245, 245, 245);
+ }
+nav .input-field label i{
+  color: rgb(17, 158, 224)
+}
+.input-field input[type=search]:focus ~ .material-icons{
+  color: rgb(17, 158, 224)
+}
+.input-field input[type=search]:focus + label i{
+  color: rgb(17, 158, 224)
+}
+
+.card-image{
+  position: relative
+}
+.card-title{
+  text-shadow: 1px 1px 3px
+  color: white;
+  position : absolute;
+  top:0px;
+}
+
+ .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating){
+    color: #2F9EE2;
+    margin: 0;
+ }
+
+ .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover{
+   color: #119EE0;
+ }
+ .card-action a{
+   display:flex;
+   align-items: center;
+ }
+ .card-action{
+   text-align: center;
+   display: flex;
+   justify-content: space-around;
+ }
+
+.video-container{
+  width: 30%;
+  height:144px;
+  top: 20px;
+  position: absolute
+}
+.video-container h5{
+  margin-top:156px;
+  font-size: 1.3em
+}
+.right-thumbnail{
+  right:7.5%
+}
+.left-thumbnail{
+  left:7.5%
+}
+.video-container iframe{
+  width: 256px;
+  height:144px;
+}
+.tabs{
+  margin-top: 5px
+}
+ #search:-webkit-autofill{
+   -webkit-box-shadow:0 0 0 50px white inset; /* Change the color to your own background color */
+    -webkit-text-fill-color: #2F9EE2;
+ }
+ #search:-webkit-autofill:focus{
+   -webkit-box-shadow:0 0 0 50px white inset; /* Change the color to your own background color */
+    -webkit-text-fill-color: #2F9EE2;
+ }
+input[type="range"]::-webkit-slider-thumb{
+  background-color: #2F9EE2
+}
+input[type="range"]::-ms-thumb{
+  background-color: #2F9EE2
+}
+input[type="range"]::-moz-range-thumb{
+  background-color: #2F9EE2
+}
+
+.tabs .tab a{
+  font-size: 1.2em
+}
+.tabs .tab a, .tabs .tab a{
+  color: rgb(100,100,100);
+}
+.tabs .tab a:hover, .tabs .tab a.active{
+  color: #2F9EE2;
+}
+.tabs .indicator{
+  background-color: #2F9EE2;
+}
+
+.btn{
+  background-color: #2F9EE2;
+}
+.btn:hover{
+  background-color: #0087d6;
+}
+
+.margin-top-20{
+  margin-top: 20px
+}
+
+#logo-sound-group{
+  margin-bottom:30px
+}
