@@ -7,8 +7,7 @@
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
-    "test:watch": "npm run test -- --watch",
-    "postinstall": "webpack -p",
+    "test:watch": "npm run test -- --watch"
   },
   "author": "",
   "license": "ISC",
@@ -39,7 +38,6 @@
     "redux-combine-actions": "^0.1.2",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.1.0",
-    "webpack-hot-middleware": "^2.13.2",
     "youtube-api-search": "0.0.5"
   }
 }

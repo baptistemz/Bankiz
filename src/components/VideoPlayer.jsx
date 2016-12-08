@@ -36,7 +36,6 @@ export default class VideoPlayer extends React.Component {
       player: event.target,
     });
     const player = this.state.player;
-    console.log(100, player)
     if(this.props.isFirstMusic){
       player.playVideo()
     }
@@ -52,7 +51,7 @@ export default class VideoPlayer extends React.Component {
       if(this.state.ended||player.getCurrentTime()===player.getDuration()){
         clearInterval(fadeLoop);
       }else{
-        if(player && player.getCurrentTime) {
+        if(player && player.getCurrentTime()) {
           videotime = player.getCurrentTime();
         }
         if(videotime !== oldTime) {
@@ -71,25 +70,29 @@ export default class VideoPlayer extends React.Component {
   }
   onStateChange(event) {
     switch (event.data) {
+      case -1:
+        console.log(5)
+        this.onReady(event)
+        break;
       case 0:
-        console.log('un event 0 :', event)
         this.setState({ended:true})
         this.props.onVideoEnd(this.props.number)
         break;
       case 1:
-        console.log('un event 1 :', event)
+        console.log(1)
         break;
       case 2:
-        console.log('un event 2 :', event)
+        console.log(2)
         break;
       case 3:
-        console.log('un event 3 :', event)
+        console.log(3)
         break;
       case 4:
-        console.log('un event 4 :', event)
+        console.log(4)
         break;
       case 5:
-        console.log('un event 5 :', event)
+        console.log(5)
+        this.onReady(event)
         break;
     }
   }
@@ -123,7 +126,6 @@ export default class VideoPlayer extends React.Component {
         fs: 1
       }
     };
-    console.log(this.props.video.snippet.title)
     return(
       <div className="video-container">
         <Youtube videoId={this.props.video.id.videoId}

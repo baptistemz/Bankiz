@@ -60,46 +60,31 @@ class SoundMixer extends React.Component {
       isFirstMusic={isFirstMusic}
       alignRight={alignRight}/>
   }
-  // firstVideoPlayer(){
-  //   const first_player = this.props.music_1
-  //   if (first_player){
-  //     const isFirstMusic = !this.props.music_2
-  //     return <VideoPlayer video={first_player}
-  //       volume={Number(this.props.balance)}
-  //       number={1}
-  //       fadeOut={this.fade.bind(this)}
-  //       onVideoEnd={this.nextVideo.bind(this)}
-  //       setPlayingAt={this.setPlayingAt.bind(this)}
-  //       playing={{this: this.props.music_2_playing, other: this.props.music_1_playing}}
-  //       forcePlay={this.state.forceFirstPlayer}
-  //       forceOtherPlayer={this.forcePlayer.bind(this)}
-  //       isFirstMusic={isFirstMusic}/>
-  //   }else{
-  //     return <div>Waiting for a music</div>
-  //   }
-  // }
-  // secondVideoPlayer(){
-  //   const second_player = this.props.music_2
-  //   if (second_player){
-  //     return <VideoPlayer video={second_player}
-  //       volume={Number(this.props.balance)}
-  //       number={2}
-  //       fadeOut={this.fade.bind(this)}
-  //       onVideoEnd={this.nextVideo.bind(this)}
-  //       setPlayingAt={this.setPlayingAt.bind(this)}
-  //       playing={{this: this.props.music_2_playing, other: this.props.music_1_playing}}
-  //       forcePlay={this.state.forceSecondPlayer}
-  //       forceOtherPlayer={this.forcePlayer.bind(this)}/>
-  //   }
-  // }
   onBalanceChange(balance){
+    if(balance === '0'){
+      this.autoSwitch()
+    }
     this.props.changeBalance(balance)
+  }
+  getBalance(){
+    return this.props.balance
+  }
+  autoSwitch(){
+    let callCount = 1;
+    var waitAndSee =function () {
+      if (callCount < 10) {
+        console.log(callCount)
+        this.getBalance() === '0' ? callCount += 1 : clearInterval(waitAndSwitch)
+      } else {
+        this.switchPlayers(this.state.to_switch)
+        clearInterval(waitAndSwitch);
+      }
+    };
+    const waitAndSwitch = setInterval(waitAndSee.bind(this), 1000);
   }
   music(music, num){
     if(music){
       return this.videoPlayer(music, num)
-    }else{
-      return <div>Waiting for a cool song</div>
     }
   }
   render(){
@@ -107,14 +92,29 @@ class SoundMixer extends React.Component {
       <div className="row">
         {this.music(this.props.music_1, 1)}
         {this.music(this.props.music_2, 2)}
-        <div className="col s5"></div>
+        <div className="col s5">
+          <div className="player-background z-depth-2">
+            <h5>player 2</h5>
+            <div className="play-pause">
+              <img src="img/play_pause.png" alt="play/pause"/>
+            </div>
+          </div>
+        </div>
         <div className="col s2">
           <div id="logo-sound-group">
-            <img src="img/logo1.png" id="logo" alt=""/>
+            <img src="img/logo1.png" id="logo" alt="penguin"/>
             <form action="#">
               <input type="range" value={this.props.balance} min="0" max="100"
                 onChange = {event => this.onBalanceChange(event.target.value)}/>
             </form>
+          </div>
+        </div>
+        <div className="col s5">
+          <div className="player-background right-background z-depth-2">
+            <h5>player 1</h5>
+            <div className="play-pause">
+              <img src="img/play_pause.png" alt="play/pause"/>
+            </div>
           </div>
         </div>
         <div className="col s12">

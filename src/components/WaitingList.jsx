@@ -16,8 +16,11 @@ export default class WaitingList extends Component{
             {
               this.props.list.map((item) => {
                 return(
-                  <li>
+                  <li className="waiting-list-icon">
                     <img src="img/youtube_icon.png" alt="" className="circle avatar-sizing"/>
+                    <p className="hover-chip truncate">
+                      {item.snippet.title}
+                    </p>
                   </li>
                 )
               })
@@ -47,5 +50,6 @@ export default class WaitingList extends Component{
         </div>
       </div>
     )
+
   }
 };

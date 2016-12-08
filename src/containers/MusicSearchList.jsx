@@ -12,10 +12,13 @@ class MusicSearchList extends Component {
   }
 
   playMusic(music){
-    const player = (!this.props.music_1 && !this.props.music_2) ? 1 : this.props.mute_player
+    const player = !this.props.music_1 && !this.props.music_2 ? 1 : this.props.mute_player
     this.props.playMusic(player, music);
   }
   addMusicToList(music){
+    if(!this.props.music_1 || !this.props.music_2){
+      this.playMusic(music)
+    }
     this.props.addToWaitingList(music);
   }
   render(){

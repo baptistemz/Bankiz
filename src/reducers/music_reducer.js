@@ -33,9 +33,9 @@ export default function(state = INITIAL_STATE, action){
     }
   case SWITCH_PLAYERS:
     if (action.payload.old_player === 1){
-      return {...state, music_1: null, next_player:2, balance: 100, mute_player:2}
+      return {...state, music_1: null, next_player:2, balance: 100, mute_player:1}
     }else{
-      return {...state, music_2: null, next_player:1, balance: 100, mute_player:1}
+      return {...state, music_2: null, next_player:1, balance: 100, mute_player:2}
     }
   default:
     return state;
